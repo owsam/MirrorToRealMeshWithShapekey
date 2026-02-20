@@ -173,7 +173,7 @@ Pull requests and suggestions are welcome.
 
 # Author
 
-Your Name
+Osamu Watanabe
 
 GitHub: [https://github.com/owsam](https://github.com/owsam)
 
@@ -187,19 +187,111 @@ Use this in the GitHub "About" section:
 
 ---
 
-# Optional: Add this topic tags on GitHub
 
-Recommended topics:
+# Mirror to Real Mesh (Keep Shape Keys)
+
+Blender用アドオン
+Mirrorモディファイアを使用して作成されたメッシュを、**Shape Keyを保持したまま実メッシュとしてミラー化**します。
+
+Blender標準仕様では、Shape Keyが存在するメッシュにMirrorモディファイアを適用することはできません。このアドオンは、Mirrorを使わずに同等の結果を生成することで、この制限を回避します。
+
+Unityなどの外部ソフトへFBXエクスポートする際のBlendshape消失問題の解決に有効です。
+
+---
+
+# 特徴
+
+* Shape Keyを完全保持
+* Mirrorモディファイア不要
+* ワンクリック実行
+* Blender 3.6対応
+* Unity互換FBX作成に最適
+
+---
+
+# 動作原理
+
+以下の処理を自動で実行します：
+
+1. Mirrorモディファイアを削除
+2. メッシュを複製
+3. Global Xで反転
+4. 法線を修正
+5. 元メッシュと結合
+6. 中央頂点をMerge by Distanceで統合
+
+これにより、Shape Keyを壊さずに完全な対称メッシュを生成します。
+
+---
+
+# インストール
+
+1. このリポジトリをダウンロード
+
+または
+
+Code → Download ZIP
+
+2. Blenderを開く
+
+3. Edit → Preferences → Add-ons
+
+4. Install をクリック
+
+5. `mirror_to_real_with_shapekey.py` を選択
+
+6. チェックをON
+
+---
+
+# 使い方
+
+1. MirrorモディファイアとShape Keyを持つメッシュを選択
+
+2. 3Dビューで
 
 ```
-blender
-blender-addon
-unity
-vrchat
-blendshape
-shapekey
-fbx
-3d
-gamedev
+Nキー → Shapekey Tools → Apply Real Mirror
 ```
+
+3. ボタンをクリック
+
+完了です。
+
+---
+
+# 使用用途
+
+* Unity用キャラクター作成
+* FBX Blendshape保持
+* VRChatアバター制作
+* Shape Key付きモデルの最終化
+
+---
+
+# 注意事項
+
+* X軸対称メッシュを前提としています
+* 実行前にバックアップを推奨します
+
+---
+
+# 対応バージョン
+
+Blender 3.6 以上
+
+---
+
+# ライセンス
+
+MIT License
+
+自由に使用・改変・配布可能
+
+---
+
+# 作者
+
+Osamu Watanabe
+
 
